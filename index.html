@@ -1,0 +1,119 @@
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+<title>QUANTA 2018</title>
+</head>
+  <body onload="loadFunction()">
+  	<!-- Navbar-->
+    <div class="Navbar-Container">
+        <div class="row">
+            <div class="nav-bar">
+              <!-- TODO: Tambahkan link buat setiap tab di sini -->
+              <a class="quanta" href="https://quanta2018.com/" target="_self" font color="white">Quanta</a>
+              <a class="bbq" href="https://gg.gg/BBQGratis" target="_blank" font color="white">BBQ</a>
+              <a class="biodata" href="https://quanta2018.com/Biodata" target="_self" font color="white">Biodata</a>
+              <a class="gallery" href="https://quanta2018.com/Gallery" target="_self" font color="white">Gallery</a>
+            </div>
+        </div>
+</div>
+
+
+<body style="width:100%; height:100%;">
+<div style="display:flex;flex-direction:horizontal;margin: auto;">
+<span class="op1" style="margin-right:10px;">
+</span>
+<span class="op2">
+</span>
+</div>
+
+<script>
+	function shuffle(array) {
+	  var currentIndex = array.length, temporaryValue, randomIndex;
+	  while (0 !== currentIndex) {
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	  }
+	  return array;
+	}
+
+	const arr1 = shuffle([102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212,213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 301, 302, 303, 304, 305, 306, 307, 309, 310, 311, 312, 313, 314, 315, 316, 317, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 342, 343, 344, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521,522, 523, 524, 525, 526, 527, 529, 530, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 601, 602, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 643, 644, 645, 701, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835,836, 837, 838, 839, 840, 841, 842, 844, 901]).slice(0, 9);
+	const arr2 = shuffle([...arr1]);
+	console.log(arr1)
+	console.log(arr2)
+	
+	const n = 3;
+	
+	res = "";
+	let id = 0;
+	for (let i = 0; i < n; i++) {
+		res += "<div>";
+		for (let j = 0; j < n; j++) {
+			res += "<button onclick='f(" + id + ")' id='a" + id + "'>.</button>";
+			id++;
+		}
+		res += "</div>"
+	}
+	$(".op1").html(res);
+	
+	res = "";
+	id = 0;
+	for (let i = 0; i < n; i++) {
+		res += "<div>";
+		for (let j = 0; j < n; j++) {
+			res += "<button onclick='g(" + id + ")' id='b" + id + "'>.</button>";
+			id++;
+		}
+		res += "</div>"
+	}
+	$(".op2").html(res);
+	
+	var lagi_milih = false;
+	var last = null;
+	console.log(id);
+	function f(id) {
+		if (lagi_milih) return;
+		$("#a" + id).html('<img src="img/'+arr1[id]+'.png" />');
+		lagi_milih = true;
+		last = id;
+	}
+	
+	var perlu = false
+	var absen = {102: 'Age', 103: 'Irfan / Mamad', 104: 'Beka', 105: 'Apanda / Ijug', 106: 'Audrey', 107: 'Cindy / Ce', 108: 'Dinda', 109: 'Earlene', 110: 'Faisal', 111: 'Fatih', 112: 'Ferdii / Ferdos', 113: 'Fredy', 114: 'Gibran', 115: 'Gibran', 116: 'Hana', 117: 'Hanna', 118: 'Han/Richie', 119: 'Tama', 120: 'Intan', 121: 'Karin', 122: 'Kevin', 123: 'Kirana', 124: 'Michael', 125: 'Al', 126: 'Adit', 127: 'Akbar', 128: 'Akbar', 129: 'Nandi / Desta', 130: 'Angga', 131: 'Farhan/Aan', 132: 'Farhan', 133: 'Jilham', 134: 'Om', 135: 'Ryan ', 136: 'Ami', 137: 'Ryaas', 138: 'Naufal', 139: 'Naufal / Opal', 140: 'Nazila/jila', 141: 'Rafi/MD', 142: 'Nana', 143: 'Talitha', 144: 'Yunie', 201: 'Ludy', 202: 'Akbar', 203: 'Akmal', 204: 'Ali', 205: 'Yusup/Ucup', 206: 'Martin', 207: 'Athiya', 208: 'Azna', 209: 'Carlo', 210: 'Fadhil', 211: 'Jarwo/Fajar', 212: 'Fathur', 213: 'Feren', 214: 'dyto', 215: 'Ilma', 216: 'Inez', 217: 'Jovi', 218: 'Kurnia', 219: 'Kyo', 220: 'Lado', 221: 'Ridwan', 222: 'Marcel', 223: 'Mike', 224: 'Mikhael/Mika/Mik', 225: 'Gafi', 226: 'Adit', 227: 'agyyy', 228: 'Ariq', 229: 'Dzikra', 230: 'Hanif', 231: 'Iqbal', 232: 'Okto', 233: 'Andin', 234: 'Nadia', 235: 'Naura', 236: 'Via', 237: 'Nunun', 238: 'Hasna ', 239: 'Rocky', 240: 'Ronaldi', 241: 'Bela', 242: 'Thami', 243: 'Wulan', 244: 'Zafir', 245: 'zuhrah', 301: 'Aan', 302: 'Amiya', 303: 'Aji', 304: 'Alghi', 305: 'Alia', 306: 'Miza', 307: 'Rio', 308: 'Icha/Nisa', 309: 'Ari', 310: 'Odi', 311: 'Samuel', 312: 'Erika', 313: 'Fadhil', 314: 'Abi', 315: 'Faza', 316: 'Ferdi', 317: 'Fitri', 319: 'Egi', 320: 'Habel', 321: 'Hamam', 322: 'Kamila', 323: 'Kukuh', 324: 'Raihan / FKR', 325: 'Daril', 326: 'POW', 327: 'Ano', 328: 'Ihsan', 329: 'Ilham', 330: 'Irfan', 331: 'Kholish', 332: 'Rafadana', 333: 'Reimon', 334: 'Zuhdi', 335: 'Huda', 336: 'Natel', 337: 'Billa', 338: 'Rafa', 339: 'Rani', 340: 'Reka', 342: 'Salsa', 343: 'Sean', 344: 'syanne', 401: 'Rofi', 402: 'Alvin', 403: 'Tio', 404: 'Ariell', 405: 'Zahra', 406: 'Bonar', 407: 'Christo', 408: 'Darian', 409: 'David', 410: 'Diva', 411: 'Vando', 412: 'Falih ', 413: 'Figo', 414: 'Alghi', 415: 'Galang', 416: 'Hilmi/Rista', 417: 'Surya', 418: 'Inigo/Igo', 419: 'Jacob', 420: 'JT', 421: 'Kefas', 422: 'Lia/Liay', 423: 'Mahdia', 424: 'Nuel', 425: 'Wildan', 426: 'Max', 427: 'Ivan', 428: 'Luthfi', 429: 'Ramy', 431: 'Rifqi', 432: 'Edina', 433: 'Ola', 434: 'Wasi', 435: 'Riri', 436: 'Roy', 437: 'sabila', 438: 'Samuel Anderssen', 439: 'Fira', 440: 'Uqi', 441: 'Tolhas', 442: 'Vikih', 443: 'Bulan', 444: 'Yasmin', 445: 'Yobel', 502: 'Jihad', 503: 'Andrew', 504: 'Angga', 505: 'Riki', 506: 'Acit/Astrid', 507: 'Syieva', 508: 'Diah', 509: 'Eugene/Yin', 510: 'Zio', 511: 'Dana', 512: 'Glenda', 513: 'Eva', 514: 'Helmi', 515: 'Iqrar', 516: 'Irfan', 517: 'Irham', 518: 'Maisy', 519: 'Mario', 520: 'Cinoy', 521: 'Ali', 522: 'Azhar', 523: 'Fiqri', 524: 'Mudrik', 525: 'Nadhif', 526: 'Sonya', 527: 'Nicho', 529: 'Risaa', 530: 'Putsal', 532: 'Rendya', 533: 'Safa', 534: 'Salman', 535: 'Samuel', 536: 'Setyawan', 537: 'Shinta', 538: 'Stefan', 539: 'Syams', 540: 'Tasput', 541: 'Ray', 542: 'Wibias', 543: 'Willy', 544: 'Zoza', 601: 'Abi', 602: 'Adyssa', 604: 'Ana', 605: 'Andhika', 606: 'Ayasha', 607: 'Ayila', 608: 'Bhaski', 609: 'Bob', 610: 'Dennis', 611: 'Dipta', 612: 'Fadhil', 613: 'Irham', 614: 'Ghifari', 615: 'Hans', 617: 'Josevan', 618: 'Khadijah', 619: 'Khansa', 620: 'Agit', 621: 'Azis', 622: 'Dahlan', 623: 'Dani', 624: 'Farras', 625: 'Andi', 626: 'Michael', 627: 'Tsaqif', 628: 'Zakiy', 629: 'Andin', 630: 'Nasywa', 631: 'Nico', 632: 'Nur', 633: 'Primo', 634: 'Rame ', 635: 'Rifqi', 636: 'Ryo', 637: 'LTO', 638: 'Tesa', 639: 'Timothy', 640: 'Titus', 641: 'Sarah', 643: 'Wiena', 644: 'Zackho', 645: 'Zafira', 701: 'Praya', 703: 'Adrian', 704: 'Zahir / Obi', 705: 'Via', 706: 'icha', 707: 'Avi', 708: 'ARKAN/ARKANSAS', 709: 'Astrid', 710: 'Daniel', 711: 'Doan', 712: 'Exacta', 713: 'Felicia', 714: 'Frans', 715: 'Steven', 716: 'Nezza / Inez', 717: 'Jofil', 718: 'Meldi', 719: 'Michelle', 720: 'Ihsan', 721: 'Yoga M.', 722: 'Danial', 723: 'Fadhlan', 724: 'Fathur', 725: 'Glend', 726: 'Rian', 727: 'Bella', 728: 'Nabila / Rara', 729: 'Nadia/Navi', 730: 'Nevil', 731: 'Nurul', 732: 'Pria', 733: 'Raul', 734: 'Rayhan', 735: 'Ryan', 736: 'Shannia', 737: 'Shella', 738: 'Steven', 739: 'Tari', 740: 'Algi', 741: 'Tsaqif', 742: 'Wilson', 743: 'Yafi', 744: 'Aldi', 801: 'Adit', 802: 'Adrian', 803: 'Adip', 804: 'Alfan', 805:'Alwan', 806: 'Amel', 807: 'Thalla', 808: 'Ashila', 809: 'Azkiya', 810: 'Brian', 811: 'Christian', 812: 'Thina', 814: 'Habib', 815: 'Jans/Michael', 816: 'Jocan', 817: 'Kamila', 818: 'Kezia', 819: 'Leo', 820: 'Vina', 821: 'Lika', 822: 'Lubna', 823: 'Luqman', 824: 'Krisna', 825: 'Marthin', 826: 'Syakir', 827: 'Gibran', 828: 'Rafi', 829: 'Rafif', 830: 'Salman', 831: 'Naufal', 832: 'Oliver', 833: 'Jipi', 834: 'Alco', 835: 'Rey', 836: 'Vian', 837: 'ila', 838: 'Rani', 839: 'Shafiya', 840: 'Siti', 841: 'Stephen', 842: 'Lia', 843: 'Yosia', 901: 'Yoga P.'};
+	function g(id) {
+		if (!lagi_milih) return;
+		$("#b" + id).html('<i>'+absen[arr2[id]]+'</i>');
+		if (arr1[last] === arr2[id]) {
+			$("#a" + last).css("color", "red");
+			$("#b" + id).css("color", "red");
+			lagi_milih = false;
+		} else {
+			perlu = true;
+			setTimeout(function() {
+				if (perlu) {
+					$("#a" + last).html(".");
+					$("#b" + id).html(".");
+					lagi_milih = false;
+				} else perlu = true;
+			}, 500);
+			
+		}
+		
+	}
+
+
+</script>
+
+
+
+
+</body>
+
+
+</html>
