@@ -55,7 +55,7 @@
 	for (let i = 0; i < n; i++) {
 		res += "<div>";
 		for (let j = 0; j < n; j++) {
-			res += "<button onclick='f(" + id + ")' id='a" + id + "'>.</button>";
+			res += "<button onclick='f(" + id + ")' id='a" + id + "'></button>";
 			id++;
 		}
 		res += "</div>"
@@ -79,7 +79,10 @@
 	console.log(id);
 	function f(id) {
 		if (lagi_milih) return;
-		$("#a" + id).html('<img src="img/'+arr1[id]+'.png" />');
+		$("#a" + id).html("");
+		$("#a" + id).css("background-image", "url('img/"+arr1[id]+".png')");
+		$("#a" + id).css("background-size", "138.9px 138.9px");
+		$("#a" + id).css("background-repeat", "no-repeat");
 		lagi_milih = true;
 		last = id;
 	}
@@ -97,7 +100,7 @@
 			perlu = true;
 			setTimeout(function() {
 				if (perlu) {
-					$("#a" + last).html(".");
+					$("#a" + last).css("background-image", "");
 					$("#b" + id).html(".");
 					lagi_milih = false;
 				} else perlu = true;
